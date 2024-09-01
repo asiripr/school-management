@@ -24,7 +24,6 @@ public class StudentServiceImple implements StudentService {
 
 	@Override
 	public Student saveStudent(Student std) {
-		// TODO Auto-generated method stub
 		return studentRepository.save(std);
 	}
 
@@ -34,8 +33,7 @@ public class StudentServiceImple implements StudentService {
 	}
 
 	@Override
-	public Student updateStudent(Student std) {
-		// TODO Auto-generated method stub
-		return null;
+	public Student updateStudent(Student student) {
+		return studentRepository.save(student);
 	}
 }
