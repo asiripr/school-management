@@ -7,28 +7,28 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jakarta.annotation.PostConstruct;
 import lk.asiripr.school_management.entity.Student;
 import lk.asiripr.school_management.service.StudentService;
 
-
 @Controller
 public class StudentController {
-	
+
 	private StudentService studentService;
 
 	public StudentController(StudentService studentService) {
 		super();
 		this.studentService = studentService;
 	}
-	
-	//handler method to handle list of students and return model and view
-	
+
+	// handler method to handle list of students and return model and view
+
 	@GetMapping("/students")
 	public String listStudents(Model model) {
 		model.addAttribute("students", studentService.getAllStudents());
 		return "students";
 	}
-	
+
 	@GetMapping("/students/new")
 	public String createStudentForm(Model model) {
 		// create student object to hold data
@@ -41,14 +41,33 @@ public class StudentController {
 	public String saveStudent(@ModelAttribute("student") Student std) {
 		studentService.saveStudent(std);
 		return "redirect:/students";
-		
+
 	}
-	
+
 	@GetMapping("/students/edit/{id}")
 	public String editStudentForm(@PathVariable Long id, Model model) {
 		model.addAttribute("student", studentService.getStudentbyId(id));
 		return "edit_student";
 	}
-	
-	
+
+	@PostMapping("/students/{id}")
+	public String updateStudent(@PathVariable Long id, @ModelAttribute("student") Student student, Model model) {
+
+//		get student from database by id
+		Student existingStd = studentService.getStudentbyId(id);
+			
+		existingStd.setId(id);
+		
+		existingStd.setFirstName(student.getFirstName());
+		
+		existingStd.setLastName(student.getLastName());
+		
+		existingStd.setEmail(student.getEmail());
+		
+//		save updated student
+		studentService.updateStudent(existingStd);
+		return "redirect:/students";
+		
+	}
+
 }
