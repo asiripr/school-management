@@ -1,5 +1,8 @@
 package lk.asiripr.school_management.controller;
 
-public class StudentController {
+import org.springframework.stereotype.Controller;
 
+
+@Controller
+public interface StudentController {
 }
