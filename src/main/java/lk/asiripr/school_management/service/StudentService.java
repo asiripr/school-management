@@ -10,4 +10,5 @@ public interface StudentService {
 	Student saveStudent(Student std);
 	Student getStudentbyId(Long id);
 	Student updateStudent(Student std);
+	void deleteStudentById(Long id);
 }
