@@ -3,6 +3,8 @@ package lk.asiripr.school_management.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lk.asiripr.school_management.entity.Student;
 import lk.asiripr.school_management.service.StudentService;
@@ -34,7 +36,12 @@ public class StudentController {
 		return "create_student";
 	}
 
-	
+	@PostMapping("/students")
+	public String saveStudent(@ModelAttribute("student") Student std) {
+		studentService.saveStudent(std);
+		return "redirect:/students";
+		
+	}
 	
 	
 }

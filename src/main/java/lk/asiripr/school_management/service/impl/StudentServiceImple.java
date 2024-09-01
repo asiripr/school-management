@@ -21,4 +21,10 @@ public class StudentServiceImple implements StudentService {
 	public List<Student> getAllStudents() {
 		return studentRepository.findAll();
 	}
+
+	@Override
+	public Student saveStudent(Student std) {
+		// TODO Auto-generated method stub
+		return studentRepository.save(std);
+	}
 }

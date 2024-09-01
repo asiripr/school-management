@@ -17,20 +17,20 @@
 					<form th:action="@{/students}" th:object="${student}" method="POST">
 						<div class="form-group">
 							<label> Student First Name </label>
-							<input type="text" name="firstName" th:field="firstName"
+							<input type="text" name="firstName" th:field="*{firstName}"
 								placeholder="Enter Student First Name" class="form-control">
 						</div>
 						<div class="card-body">
 							<div class="form-group">
 								<label> Student Last Name </label>
-								<input type="text" name="lastName" th:field="lastName"
+								<input type="text" name="lastName" th:field="*{lastName}"
 									placeholder="Enter Student Last Name" class="form-control">
 							</div>
 						</div>
 						<div class="card-body">
 							<div class="form-group">
 								<label> Student Email </label>
-								<input type="text" name="email" th:field="email" placeholder="Enter Student Email"
+								<input type="text" name="email" th:field="*{email}" placeholder="Enter Student Email"
 									class="form-control">
 							</div>
 						</div>
