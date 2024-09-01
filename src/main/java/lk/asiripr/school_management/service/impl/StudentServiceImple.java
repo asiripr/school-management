@@ -27,4 +27,15 @@ public class StudentServiceImple implements StudentService {
 		// TODO Auto-generated method stub
 		return studentRepository.save(std);
 	}
+
+	@Override
+	public Student getStudentbyId(Long id) {
+		return studentRepository.findById(id).get();
+	}
+
+	@Override
+	public Student updateStudent(Student std) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
