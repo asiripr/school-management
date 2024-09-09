@@ -1,6 +1,6 @@
 package lk.asiripr.school_management;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,8 +15,8 @@ public class SchoolManagementApplication implements CommandLineRunner {
 		SpringApplication.run(SchoolManagementApplication.class, args);
 	}
 
-	@Autowired // Dependency Injection with @Autowired
-	private StudentRepository studentRepository; // Inject the StudentRepository bean into this class.
+//	@Autowired // Dependency Injection with @Autowired
+//	private StudentRepository studentRepository; // Inject the StudentRepository bean into this class.
 
 	@Override
 	public void run(String... args) throws Exception{
