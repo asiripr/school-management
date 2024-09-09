@@ -23,6 +23,10 @@ public class StudentController {
 	}
 
 	// handler method to handle list of students and return model and view
+	@GetMapping("/")
+	public String welcome() {
+		return "welcome";
+	}
 
 	@GetMapping("/students")
 	public String listStudents(Model model) {
@@ -49,10 +53,10 @@ public class StudentController {
 	public String editStudentForm(@PathVariable Long id, Model model) {
 		Student student = studentService.getStudentbyId(id);
 		if (student == null) {
-	        throw new NoSuchElementException("Student not found");
-	    }
-	    model.addAttribute("student", student);
-	    return "edit_student";
+			throw new NoSuchElementException("Student not found");
+		}
+		model.addAttribute("student", student);
+		return "edit_student";
 	}
 
 	@PostMapping("/students/{id}")
@@ -60,17 +64,18 @@ public class StudentController {
 
 //		get student from database by id
 		Student existingStd = studentService.getStudentbyId(id);
-			
-		existingStd.setId(id);		
+
+		existingStd.setId(id);
 		existingStd.setFirstName(student.getFirstName());
 		existingStd.setLastName(student.getLastName());
 		existingStd.setEmail(student.getEmail());
-		
+
 //		save updated student
 		studentService.updateStudent(existingStd);
 		return "redirect:/students";
-		
+
 	}
+
 	@GetMapping("/students/{id}")
 	public String deleteStudent(@PathVariable Long id) {
 		studentService.deleteStudentById(id);
