@@ -8,14 +8,12 @@ A robust school management system developed using Java Spring Boot. This system 
 - **Course Management**: Add, edit, and assign courses to students.
 
 ## Requirements
-------------
 
 - **Java**: Version 17 or higher
 - **Spring Boot**: Version 3.x or higher
 - **Maven or Gradle**: For dependency management
 
 ## Installation
-------------
 
 1. **Clone the Repository**:
    ```bash
