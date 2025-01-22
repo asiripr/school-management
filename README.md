@@ -1,4 +1,4 @@
-# School Management System
+# School Management System 📚
 
 A robust school management system developed using Java Spring Boot. This system is designed to efficiently manage school operations, track student progress, and streamline administrative tasks.
 
