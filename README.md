@@ -55,6 +55,6 @@ A robust school management system developed using Java Spring Boot. This system 
 
 - Explore the dashboard for managing students, courses, and grades.
 
-## Contributing
+## Contributing 🧑‍🏭
 
 Contributions are welcome! Please submit pull requests with detailed explanations of changes.
